@@ -6,10 +6,24 @@ function Header({ siteTitle }) {
   return (
     <div
       css={css`
-        border: 1px solid black;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        width: 100%;
       `}
     >
-      <h1>header component</h1>
+      <div className="header-social-media">
+        <p>social media stuff</p>
+      </div>
+      <div className="header-logo">
+        <p>Center City</p>
+        <p>Language & Play</p>
+      </div>
+      <div className="header-contact">
+        <p>999.999.9999 | placeholderemail@gmail.com</p>
+      </div>
     </div>
   )
 }
