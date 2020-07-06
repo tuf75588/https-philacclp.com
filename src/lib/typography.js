@@ -1,9 +1,7 @@
 import Typography from 'typography';
 import '../fonts/fonts.css';
 
-/*
-global fonts that will be used throughout the website will be kept here
-*/
+// global fonts that will be used throughout the website will be kept here
 
 export const fonts = {
   thin: 'Inter Thin',
@@ -13,7 +11,8 @@ export const fonts = {
   bold: 'Inter Bold',
 };
 
-/* global typography styles that will be handy later*/
+// global typography styles that will be handy later
+
 const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: '1.55',
