@@ -1,160 +1,32 @@
 import React from 'react';
-import Link from './link';
 import {css} from '@emotion/core';
-import styled from '@emotion/styled';
-import theme from '../../config/theme';
-import {fonts} from '../lib/typography';
-import logo from '../images/logo.png';
-import Container from './container';
-import {bpMaxSM} from '../lib/breakpoints';
-import {lighten} from 'polished';
-
-function HeaderLink({headerColor, activeClassName = 'active', ...props}) {
+function Header(props) {
   return (
-    <Link
-      activeClassName={activeClassName}
-      partiallyActive={true}
-      css={{
-        textDecoration: 'none',
-        color: headerColor ? headerColor : theme.colors.body_color,
-        '&:hover,&:focus': {
-          background:
-            headerColor === theme.colors.white
-              ? 'rgba(40, 28, 77, 0.3)'
-              : lighten(0.4, theme.brand.primary),
-          color:
-            headerColor === theme.colors.white
-              ? 'white'
-              : theme.colors.link_color_hover,
-        },
-        '&.active': {
-          background:
-            headerColor === theme.colors.white
-              ? 'rgba(40, 28, 77, 0.3)'
-              : lighten(0.4, theme.brand.primary),
-        },
-      }}
-      {...props}
-    />
-  );
-}
-
-const NavLink = styled(HeaderLink)({
-  padding: '8px 10px',
-  borderRadius: '3px',
-  background: 'transparent',
-  '& + &': {marginLeft: 10},
-  [bpMaxSM]: {
-    display: 'none',
-  },
-});
-
-function Header({
-  dark,
-  bgColor = 'none',
-  siteTitle,
-  headerLink = '/',
-  headerColor = 'black',
-  fixed = false,
-  headerImage = true,
-  maxWidth = 720,
-}) {
-  return (
-    <header
+    <div
       css={css`
-        width: 100%;
-        flex-shrink: 0;
-        background: none;
-        padding: 30px 0 0 0;
-        ${bpMaxSM} {
-          padding: 35px 0 0 0;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5em;
+        .logo-brand {
+          padding-left: 2em;
         }
-        background: ${dark ? '#090909' : `${bgColor}` || 'none'};
-        z-index: 10;
-        position: ${fixed ? 'fixed' : 'absolute'};
-        top: 0;
-        font-family: ${fonts.light};
       `}
     >
-      <Container maxWidth={maxWidth} noVerticalPadding>
-        <nav
-          css={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <HeaderLink
-            to={headerLink}
-            aria-label="go to homepage"
-            activeClassName="none"
-            headerColor={headerColor}
-            css={{
-              position: 'relative',
-              fontFamily: fonts.regular,
-              display: 'flex',
-              alignItems: 'center',
-              img: {
-                marginBottom: 0,
-                maxWidth: '50px',
-                position: 'absolute',
-                borderRadius: '100%',
-                background:
-                  headerColor === '#fff' ? 'rgba(40, 28, 77, 0.7)' : '#f1f1f1',
-              },
-              ':hover, :focus': {
-                background: 'transparent',
-              },
-              span: {
-                transform: headerImage && 'translateX(60px)',
-              },
-            }}
-          >
-            {headerImage && <img src={logo} alt="PhilaCCLP" />}{' '}
-            <span>{siteTitle}</span>
-          </HeaderLink>
-          <div
-            css={css`
-              font-size: 16px;
-              line-height: 1.25;
-              display: flex;
-              align-items: center;
-              .mobile-nav {
-                display: none;
-                visibility: hidden;
-                ${bpMaxSM} {
-                  display: block;
-                  visibility: visible;
-                }
-              }
-            `}
-          >
-            <NavLink
-              headerColor={headerColor}
-              to="/faq/"
-              aria-label="View blog page"
-            >
-              FAQ
-            </NavLink>
-            <NavLink
-              headerColor={headerColor}
-              to="/about/"
-              aria-label="View about page"
-            >
-              About
-            </NavLink>
-            <NavLink
-              headerColor={headerColor}
-              to="/contact/"
-              aria-label="View about page"
-            >
-              Contact
-            </NavLink>
-          </div>
-        </nav>
-      </Container>
-    </header>
+      {/* this component will serve as the "HERO" containing our logo
+          and some meta contact information like social media and a contact
+          email
+      */}
+      <div>
+        <span>🐦</span> <span>📷</span>
+      </div>
+
+      <header className="logo-brand">
+        <h1>CCLP</h1>
+      </header>
+      <div>email info | phone number</div>
+    </div>
   );
 }
 
