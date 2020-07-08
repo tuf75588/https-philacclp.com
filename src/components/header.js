@@ -1,16 +1,20 @@
 import React from 'react';
 import {css} from '@emotion/core';
-function Header(props) {
+import cclp from '../images/cclp.png';
+function Header() {
   return (
     <div
       css={css`
-        border: 1px solid black;
+        border-bottom: 1px solid black;
         display: flex;
         align-items: center;
+
         justify-content: space-between;
-        padding: 1.5em;
+        padding: 0.5em;
         .logo-brand {
-          padding-left: 2em;
+          padding-left: 3em;
+          margin-left: 3em;
+          height: 200px;
         }
       `}
     >
@@ -23,7 +27,15 @@ function Header(props) {
       </div>
 
       <header className="logo-brand">
-        <h1>CCLP</h1>
+        <img
+          src={cclp}
+          css={css`
+            display: block;
+            max-height: 100%;
+            max-width: 100%;
+            border-radius: 3px;
+          `}
+        />
       </header>
       <div>email info | phone number</div>
     </div>
