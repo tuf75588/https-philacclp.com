@@ -5,15 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {graphql, useStaticQuery} from 'gatsby';
 import {Global, css} from '@emotion/core';
 import styled from '@emotion/styled';
 import {ThemeProvider} from 'emotion-theming';
 import Header from './header';
-import Container from './container';
+import {MDXProvider} from '@mdx-js/react';
 import theme from '../../config/theme';
 import Navigation from './nav';
-import {bpMaxSM} from '../lib/breakpoints';
+import {bpMaxSM, bpMaxMD} from '../lib/breakpoints';
 import {fonts} from '../lib/typography';
 import reset from '../lib/reset';
 // global styles for whole app
@@ -150,7 +151,7 @@ const DefaultHero = styled.section`
     color: ${theme.colors.white};
   }
   width: 100%;
-  ${({headerColor}) => {
+  ${({headerColor}) =>
     headerColor
       ? css`
           background: #3155dc;
@@ -159,8 +160,7 @@ const DefaultHero = styled.section`
           background-repeat: no-repeat;
           background-size: contain;
         `
-      : null;
-  }}
+      : null}
   position: relative;
   z-index: 0;
   align-items: center;
@@ -174,12 +174,31 @@ const DefaultHero = styled.section`
   }
 `;
 
-function Layout() {
+function Layout({children}) {
   return (
-    <div>
-      <Header />
-      <Navigation />
-    </div>
+    <ThemeProvider theme={theme}>
+      <Global styles={globalStyles} />
+      <Helmet
+        title={`Homepage for Center City Language & Play`}
+        meta={[{name: 'description', content: 'homepage!'}]}
+      >
+        <html lang="en" />
+      </Helmet>
+      <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          min-height: 100vh;
+        `}
+      >
+        <div css={{flex: '1 0 auto'}}>
+          <Header />
+          <Navigation />
+          <MDXProvider>{children}</MDXProvider>
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }
 
