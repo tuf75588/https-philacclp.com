@@ -5,10 +5,15 @@ function Header() {
   return (
     <div
       css={css`
-        border-bottom: 1px solid black;
         display: flex;
         align-items: center;
-
+        background-image: linear-gradient(
+          to top,
+          #fdcbf1 0%,
+          #fdcbf1 1%,
+          #e6dee9 100%
+        );
+        position: relative;
         justify-content: space-between;
         padding: 0.5em;
         .logo-brand {
@@ -22,6 +27,7 @@ function Header() {
           and some meta contact information like social media and a contact
           email
       */}
+      {/* for border styling */}
       <div>
         <span>🐦</span> <span>📷</span>
       </div>

@@ -192,8 +192,15 @@ function Layout({children}) {
           min-height: 100vh;
         `}
       >
+        <Header />
+        <div
+          css={{
+            border: '1px solid rgba(0,0,0,0.2)',
+            paddingRight: '10px',
+            marginTop: '0.5px',
+          }}
+        />
         <div css={{flex: '1 0 auto'}}>
-          <Header />
           <Navigation />
           <MDXProvider>{children}</MDXProvider>
         </div>

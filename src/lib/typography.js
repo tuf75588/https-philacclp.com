@@ -1,8 +1,6 @@
 import Typography from 'typography';
 import '../fonts/fonts.css';
 
-// global fonts that will be used throughout the website will be kept here
-
 export const fonts = {
   thin: 'Inter Thin',
   // thinItalic: 'Inter Thin Italic',
@@ -18,11 +16,9 @@ export const fonts = {
   // boldItalic: 'Inter Bold Italic',
 };
 
-// global typography styles that will be handy later
-
 const typography = new Typography({
   baseFontSize: '18px',
-  baseLineHeight: '1.55',
+  baseLineHeight: 1.55,
   headerLineHeight: 1.4,
   headerFontFamily: [fonts.light, 'sans-serif'],
   bodyFontFamily: [fonts.regular, 'sans-serif'],
@@ -37,7 +33,7 @@ const typography = new Typography({
       color: 'hsla(0,0%,0%,0.75)',
       fontFamily: fonts.light,
     },
-    'h1 code, h3 code, h4 code, h5 code, h6 code': {
+    'h1 code, h2 code, h3 code, h4 code, h5 code, h6 code': {
       fontSize: 'inherit',
     },
     h2: {
@@ -59,12 +55,11 @@ const typography = new Typography({
     },
   }),
 });
-
-// hot reload typography when in development mode
+// Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {
   typography.injectStyles();
 }
 
 export default typography;
 export const rhythm = typography.rhythm;
-export const sclae = typography.scale;
+export const scale = typography.scale;
