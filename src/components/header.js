@@ -1,49 +1,32 @@
 import React from 'react';
 import {css} from '@emotion/core';
-import cclp from '../images/cclp.png';
+import Img from 'gatsby-image';
+import {useStaticQuery, graphql} from 'gatsby';
 function Header() {
+  const data = useStaticQuery(graphql`
+    {
+      file(
+        childImageSharp: {id: {eq: "47149be2-0d1f-5dff-9a5e-00e7c6522289"}}
+      ) {
+        id
+        childImageSharp {
+          fixed(width: 200, height: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
+  console.log(data);
   return (
     <div
       css={css`
-        display: flex;
-        align-items: center;
-        background-image: linear-gradient(
-          to top,
-          #fdcbf1 0%,
-          #fdcbf1 1%,
-          #e6dee9 100%
-        );
-        position: relative;
-        justify-content: space-between;
-        padding: 0.5em;
-        .logo-brand {
-          padding-left: 3em;
-          margin-left: 3em;
-          height: 200px;
-        }
+        padding: 0.5rem 2rem 0 0;
+        justify-content: space-around;
+        margin: 0 auto;
       `}
     >
-      {/* this component will serve as the "HERO" containing our logo
-          and some meta contact information like social media and a contact
-          email
-      */}
-      {/* for border styling */}
-      <div>
-        <span>🐦</span> <span>📷</span>
-      </div>
-
-      <header className="logo-brand">
-        <img
-          src={cclp}
-          css={css`
-            display: block;
-            max-height: 100%;
-            max-width: 100%;
-            border-radius: 3px;
-          `}
-        />
-      </header>
-      <div>email info | phone number</div>
+      <Img fixed={data.file.childImageSharp.fixed} />
     </div>
   );
 }

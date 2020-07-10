@@ -7,16 +7,13 @@ function Navigation() {
     <ul
       css={css`
         display: flex;
-        width: 90%;
+
         font-family: ${fonts.light};
-        padding-right: 20px;
         justify-content: center;
-        margin: 10px auto;
 
         li {
           list-style-type: none;
-
-          padding-right: 30px;
+          margin: 1rem;
         }
       `}
     >
