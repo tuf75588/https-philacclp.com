@@ -17,17 +17,32 @@ function Header() {
       }
     }
   `);
-  console.log(data);
+
   return (
-    <div
-      css={css`
-        padding: 0.5rem 2rem 0 0;
-        justify-content: space-around;
-        margin: 0 auto;
-      `}
-    >
-      <Img fixed={data.file.childImageSharp.fixed} />
-    </div>
+    <React.Fragment>
+      <div
+        css={css`
+          padding-top: 0.5rem;
+          padding-right: 1rem;
+          padding-left: 1rem;
+          display: flex;
+          justify-content: center;
+
+          margin-bottom: 0.5rem;
+          margin-left: auto;
+          margin-right: auto;
+        `}
+      >
+        <Img fixed={data.file.childImageSharp.fixed} />
+      </div>
+      <hr
+        css={css`
+          width: 50%;
+          margin: 0 auto;
+          opacity: 0.1;
+        `}
+      />
+    </React.Fragment>
   );
 }
 

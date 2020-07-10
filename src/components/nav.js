@@ -13,7 +13,11 @@ function Navigation() {
 
         li {
           list-style-type: none;
-          margin: 1rem;
+          padding: 0.5rem;
+        }
+        li:hover {
+          text-decoration: underline;
+          cursor: pointer;
         }
       `}
     >

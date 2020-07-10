@@ -1,7 +1,11 @@
 import React from 'react';
 
 import Layout from '../components/layout';
-
-const IndexPage = () => <Layout>a new website!</Layout>;
+import Hero from '../components/hero';
+const IndexPage = () => (
+  <Layout>
+    <Hero />
+  </Layout>
+);
 
 export default IndexPage;
