@@ -1,15 +1,14 @@
 import React from 'react';
 import {css} from '@emotion/core';
-
+import IntroPhotograph from './intro-photograph';
 function Introduction() {
   const boxOneStyle = css`
     border: 1px solid black;
     margin: 1rem;
-    width: 300px;
+    width: 500px;
   `;
 
   const boxTwoStyle = css`
-    border: 1px solid black;
     margin: 1rem;
     width: 300px;
   `;
@@ -18,43 +17,28 @@ function Introduction() {
       css={css`
         display: flex;
         justify-content: center;
-        align-items: center;
-        margin: 2rem auto;
+        align-items: flex-start;
+        margin: 2rem auto 0 auto;
+        height: 600px;
       `}
+      className="introduction-section"
     >
       <div css={boxOneStyle}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut velit
-        ligula, varius eu hendrerit ut, vehicula sed nisi. Pellentesque commodo
-        tempus felis, in suscipit ipsum auctor id. Vestibulum ante ipsum primis
-        in faucibus orci luctus et ultrices posuere cubilia curae; Donec
-        porttitor ultricies ornare. Duis eget imperdiet tellus. Nullam nec
-        condimentum magna. Sed ultrices dolor ut eleifend imperdiet. Morbi quam
-        ex, blandit in gravida at, pretium id dolor. Suspendisse hendrerit justo
-        id justo porta commodo. Fusce ut sapien eu dui euismod fringilla quis
-        nec nisi. Sed vitae tempor justo. Integer ut ligula in lacus laoreet
-        elementum. Fusce quis libero sollicitudin, tempus velit at, feugiat
-        lectus. Aliquam porta feugiat posuere. Aliquam erat volutpat. Nunc
-        feugiat lobortis vehicula. Donec porttitor laoreet neque vehicula
-        tempus. Vestibulum eleifend sapien nunc, commodo sollicitudin ligula
-        vestibulum sed. Pellentesque habitant morbi tristique senectus et netus
-        et malesuada fames ac turpis egestas.
+        <IntroPhotograph />
       </div>
       <div css={boxTwoStyle}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut velit
-        ligula, varius eu hendrerit ut, vehicula sed nisi. Pellentesque commodo
-        tempus felis, in suscipit ipsum auctor id. Vestibulum ante ipsum primis
-        in faucibus orci luctus et ultrices posuere cubilia curae; Donec
-        porttitor ultricies ornare. Duis eget imperdiet tellus. Nullam nec
-        condimentum magna. Sed ultrices dolor ut eleifend imperdiet. Morbi quam
-        ex, blandit in gravida at, pretium id dolor. Suspendisse hendrerit justo
-        id justo porta commodo. Fusce ut sapien eu dui euismod fringilla quis
-        nec nisi. Sed vitae tempor justo. Integer ut ligula in lacus laoreet
-        elementum. Fusce quis libero sollicitudin, tempus velit at, feugiat
-        lectus. Aliquam porta feugiat posuere. Aliquam erat volutpat. Nunc
-        feugiat lobortis vehicula. Donec porttitor laoreet neque vehicula
-        tempus. Vestibulum eleifend sapien nunc, commodo sollicitudin ligula
-        vestibulum sed. Pellentesque habitant morbi tristique senectus et netus
-        et malesuada fames ac turpis egestas.
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
+          lorem lectus. Morbi dignissim elit a lacus tincidunt auctor eu
+          vehicula magna. Fusce finibus euismod eros, sed imperdiet enim
+          ultrices eget. Aenean hendrerit sagittis lacus, ac ornare ipsum. Etiam
+          vel risus magna. Nulla dictum mi ut quam ultrices congue. Sed eu elit
+          dictum ex elementum dictum eu eget nunc. Nullam lacinia dui ante.
+          Aenean vel feugiat est, at cursus libero. Aliquam a eleifend dolor,
+          sed lobortis lacus. Vestibulum ante ipsum primis in faucibus orci
+          luctus et ultrices posuere cubilia curae; Sed sed ultrices sem, eu
+          bibendum felis. Proin condimentum tempus porta. Fusce a elementum leo.
+        </p>
       </div>
     </div>
   );
