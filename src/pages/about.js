@@ -7,17 +7,17 @@ import Services from '../components/services';
 import Container from '../components/container';
 import {css} from '@emotion/core';
 
-const Card = ({
-  backgroundColor = '#E75248',
-  title,
-  description,
-  link,
-  big = false,
-}) => (
-  <Link to={link} aria-label={`View ${title}`}>
-    hello there
-  </Link>
-);
+// const Card = ({
+//   backgroundColor = '#E75248',
+//   title,
+//   description,
+//   link,
+//   big = false,
+// }) => (
+//   <Link to={link} aria-label={`View ${title}`}>
+//     hello there
+//   </Link>
+// );
 
 const IndexPage = () => (
   <Layout>
@@ -28,7 +28,7 @@ const IndexPage = () => (
         padding: 40px 80px 60px 80px;
       `}
     >
-      <Hero />
+      <h1>about page</h1>
     </Container>
   </Layout>
 );
