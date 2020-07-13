@@ -13,16 +13,7 @@ function Introduction() {
     width: 300px;
   `;
   return (
-    <div
-      css={css`
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        margin: 2rem auto 0 auto;
-        height: 600px;
-      `}
-      className="introduction-section"
-    >
+    <div css={css``} className="introduction-section">
       <div css={boxOneStyle}>
         <IntroPhotograph />
       </div>

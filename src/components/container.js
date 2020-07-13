@@ -9,7 +9,7 @@ const Container = (props) => {
     noVerticalPadding = false,
     ...restProps
   } = props;
-
+  console.log(props);
   // helper function for helping to determine if we are at full max width -- Thanks to @kentcdodds for this!
   const fullMaxWidth = Number.isNaN(Number(maxWidth))
     ? maxWidth

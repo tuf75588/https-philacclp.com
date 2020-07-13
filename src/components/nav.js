@@ -1,7 +1,7 @@
 import React from 'react';
 import {css} from '@emotion/core';
 import {fonts} from '../lib/typography';
-
+import Link from './link';
 function Navigation() {
   return (
     <ul
@@ -21,8 +21,12 @@ function Navigation() {
         }
       `}
     >
-      <li>Home</li>
-      <li>About</li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/about">About</Link>
+      </li>
       <li>Services</li>
       <li>Contact</li>
       <li>FAQ</li>
