@@ -33,15 +33,16 @@ function Header() {
       >
         <Img fixed={data.file.childImageSharp.fixed} />
       </div>
-      <h3
+      <p
         css={css`
           text-align: center;
           font-family: 'Dancing Script', cursive;
           font-size: 30px;
+          margin-bottom: 25px;
         `}
       >
         Creating a limitless future through language and play
-      </h3>
+      </p>
       <hr
         css={css`
           width: 50%;

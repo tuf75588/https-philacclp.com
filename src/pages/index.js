@@ -111,17 +111,53 @@ const Description = styled.div`
 function IndexPage() {
   return (
     <Layout>
-      <Container>
+      <Container
+        css={css`
+          margin-top: -20px;
+          position: relative;
+          border-radius: 5px;
+          padding: 40px 80px 60px 80px;
+        `}
+      >
         <Hero />
       </Container>
       <Container>
         <Card
           big
-          backgroundColor={theme.colors.blue}
+          backgroundColor={theme.colors.red}
           title="Consultation"
           description="A Service offered by CCLP"
           link="https://google.com"
         />
+        <div
+          css={css`
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 226px);
+            gap: 20px;
+            ${bpMaxSM} {
+              grid-template-columns: 1fr;
+            }
+          `}
+        >
+          <Card
+            title="Diagnosis"
+            backgroundColor={theme.colors.purple}
+            link="https://www.google.com"
+            description="This is an example description snippet"
+          />{' '}
+          <Card
+            title="Diagnosis"
+            backgroundColor={theme.colors.blue}
+            link="https://www.google.com"
+            description="This is an example description snippet"
+          />{' '}
+          <Card
+            title="Diagnosis"
+            backgroundColor={theme.colors.yellow}
+            link="https://www.google.com"
+            description="This is an example description snippet"
+          />
+        </div>
       </Container>
     </Layout>
   );
