@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Hero from '../components/hero';
-import Introduction from '../components/home-intro';
 import Services from '../components/services';
 import {fonts, rhythm} from '../lib/typography';
 import {bpMaxXS, bpMaxSM, bpMaxMD} from '../lib/breakpoints';
@@ -10,6 +9,7 @@ import {css} from '@emotion/core';
 import Link from '../components/link';
 import theme from '../../config/theme';
 import styled from '@emotion/styled';
+import IntroPhoto from '../components/intro-photograph';
 const Card = ({
   backgroundColor = '#E75248',
   title,
@@ -121,6 +121,31 @@ function IndexPage() {
       >
         <Hero />
       </Container>
+
+      <div
+        css={css`
+          display: flex;
+          justify-content: center;
+        `}
+      >
+        <div style={{width: 400}}>
+          <IntroPhoto />
+        </div>
+        <span
+          css={css`
+            margin-left: 1rem;
+            width: 300px;
+          `}
+        >
+          Fusce finibus euismod eros, sed imperdiet enim ultrices eget. Aenean
+          hendrerit sagittis lacus, ac ornare ipsum. Etiam vel risus magna.
+          Nulla dictum mi ut quam ultrices congue. Sed eu elit dictum ex
+          elementum dictum eu eget nunc. Nullam lacinia dui ante. Aenean vel
+          feugiat est, at cursus libero. Aliquam a eleifend dolor, sed lobortis
+          lacus. Vestibulum ante ipsum primis in faucibus orci luctus et
+          ultrices posuere cubilia curae; Sed sed ultrices sem, eu
+        </span>
+      </div>
       <Container>
         <Card
           big

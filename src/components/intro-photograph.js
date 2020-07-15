@@ -7,7 +7,7 @@ function IntroPhotograph() {
     query {
       file(relativePath: {eq: "placeholder.png"}) {
         childImageSharp {
-          fluid(maxWidth: 500, maxHeight: 500, quality: 100) {
+          fluid(maxWidth: 900, maxHeight: 900, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -15,11 +15,7 @@ function IntroPhotograph() {
     }
   `);
 
-  return (
-    <div>
-      <Img fluid={data.file.childImageSharp.fluid} />
-    </div>
-  );
+  return <Img fluid={data.file.childImageSharp.fluid} />;
 }
 
 export default IntroPhotograph;
