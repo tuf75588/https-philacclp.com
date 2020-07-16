@@ -17,6 +17,7 @@ import Navigation from './nav';
 import {bpMaxSM, bpMaxMD} from '../lib/breakpoints';
 import {fonts} from '../lib/typography';
 import reset from '../lib/reset';
+import mdxComponents from '../components/mdx';
 // global styles for whole app
 
 export const globalStyles = css`
@@ -194,7 +195,7 @@ function Layout({children}) {
       >
         <Header />
         <Navigation />
-        <MDXProvider>{children}</MDXProvider>
+        <MDXProvider components={mdxComponents}>{children}</MDXProvider>
       </div>
     </ThemeProvider>
   );
