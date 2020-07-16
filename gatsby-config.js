@@ -48,5 +48,14 @@ module.exports = {
         pathToConfigModule: `src/lib/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.md', '.mdx'],
+        defaultLayouts: {
+          default: require.resolve('./src/components/layout.js'),
+        },
+      },
+    },
   ],
 };

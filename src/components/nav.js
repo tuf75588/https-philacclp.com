@@ -27,10 +27,21 @@ function Navigation() {
       <li>
         <Link to="/about">About</Link>
       </li>
-      <li>Services</li>
-      <li>Contact</li>
-      <li>FAQ</li>
+      <li>
+        <Link to="/services">Services</Link>
+      </li>
+      <li>
+        <Link to="/contact">Contact</Link>
+      </li>
+      <li>
+        <Link to="/faq">FAQ</Link>
+      </li>
     </ul>
   );
 }
+
+/*
+route each page to the appropriate view
+*/
+
 export default Navigation;
