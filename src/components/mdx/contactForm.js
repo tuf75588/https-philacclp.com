@@ -30,17 +30,27 @@ function ContactForm() {
       >
         <h2>Contact us</h2>
         <form>
-          <label>first name</label>
+          <label htmlFor="first-name">first name</label>
           <div>
-            <input type="text" placeholder="Jane" />
+            <input type="text" name="name" id="first-name" placeholder="Jane" />
           </div>
-          <label>last name</label>
+          <label htmlFor="last-name">last name</label>
           <div>
-            <input type="text" placeholder="Doe" />
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Doe"
+            />
           </div>
-          <label>message</label>
+          <label htmlFor="message">message</label>
           <div>
-            <textarea rows="8" placeholder="message...."></textarea>
+            <textarea
+              rows="8"
+              id="message"
+              placeholder="message...."
+              name="message"
+            ></textarea>
           </div>
         </form>
         <button onClick={() => toggleClick(!clicked)}>Submit</button>

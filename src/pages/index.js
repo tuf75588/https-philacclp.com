@@ -1,14 +1,11 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Hero from '../components/hero';
-import Services from '../components/services';
-import {fonts, rhythm} from '../lib/typography';
-import {bpMaxXS, bpMaxSM, bpMaxMD} from '../lib/breakpoints';
+import {bpMaxSM, bpMaxMD} from '../lib/breakpoints';
 import Container from '../components/container';
 import {css} from '@emotion/core';
 import Link from '../components/link';
 import theme from '../../config/theme';
-import styled from '@emotion/styled';
 import IntroPhoto from '../components/intro-photograph';
 const Card = ({
   backgroundColor = '#E75248',
@@ -100,13 +97,6 @@ const Card = ({
     </div>
   </Link>
 );
-
-const Description = styled.div`
-  width: 100%;
-  p {
-    margin-bottom: 4px;
-  }
-`;
 
 function IndexPage() {
   return (
