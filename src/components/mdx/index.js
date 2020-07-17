@@ -7,8 +7,9 @@ giant object to later be used in mdx files
 import React from 'react';
 import Title from './title';
 import Subtitle from './subtitle';
-
+import Form from './contactForm';
 export default {
   h1: (props) => <Title {...props} />,
   h2: (props) => <Subtitle {...props} />,
+  Form,
 };
