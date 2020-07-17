@@ -1,6 +1,19 @@
 import React from 'react';
-
+import {css} from '@emotion/core';
+import Container from '../container';
 function FAQ() {
-  return <h1>here are some frequently asked questions</h1>;
+  return (
+    <Container>
+      <h3
+        css={css`
+          text-align: center;
+          margin: 0;
+          padding: 0;
+        `}
+      >
+        Frequently asked questions
+      </h3>
+    </Container>
+  );
 }
 export default FAQ;

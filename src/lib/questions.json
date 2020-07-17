@@ -1,0 +1,38 @@
+[
+  {
+    "order": 1,
+    "question": "Do you provide speech therapy services? ",
+    "answer": "No. Our services are intended to help families and caregivers learn how to enrich their child’s speech, language, and play skills. Sessions are not meant to be a replacement for speech therapy services. A speech therapy provider can be found by searching https://www.asha.org/profind/ or through your child’s primary care physician. ",
+    "isExpanded": false
+  },
+  {
+    "order": 2,
+    "question": "What if I have concerns regarding my child’s development?",
+    "answer": "Please discuss any concerns regarding your child’s development during your consultation. Appropriate referrals and information can be provided depending on your family’s needs.",
+    "isExpanded": false
+  },
+  {
+    "order": 3,
+    "question": "What can I expect during my first visit?",
+    "answer": "A consultation is 60-90 minutes in length depending on your child’s age.  The initial 30-45 minutes will be spent observing your child’s play, language, and speech skills as well as your families typical routines and interactions. The remaining time will be spent discussing your child’s skills and appropriate strategies to encourage their development.",
+    "isExpanded": false
+  },
+  {
+    "order": 4,
+    "question": "What do I need to do to prepare for my consultation?",
+    "answer": "Prior to your consultation, an intake questionnaire will be sent. Please fill out this intake and return it  at least 24 hours prior to your scheduled visit. It is also strongly encouraged to have your child’s typical toys, snacks, and other household objects available during the visit.",
+    "isExpanded": false
+  },
+  {
+    "order": 5,
+    "question": "What if I have questions after my consultation?",
+    "answer": "Please send questions to the email provided to you after your initial inquiry. We will do our best to respond within 24 hours. Families are also encouraged to schedule follow up sessions if they require continued support.",
+    "isExpanded": false
+  },
+  {
+    "order": 6,
+    "question": "Can I schedule a visit for more than one child at a time?",
+    "answer": "Yes. Please indicate the number of children in your household and their ages in your initial inquiry.",
+    "isExpanded": false
+  }
+]

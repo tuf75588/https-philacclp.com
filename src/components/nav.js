@@ -2,6 +2,7 @@ import React from 'react';
 import {css} from '@emotion/core';
 import {fonts} from '../lib/typography';
 import Link from './link';
+
 function Navigation() {
   return (
     <ul
@@ -18,6 +19,12 @@ function Navigation() {
         li:hover {
           text-decoration: underline;
           cursor: pointer;
+        }
+        @media (min-width: 300px) {
+          li {
+            margin: 0;
+            padding: 5px;
+          }
         }
       `}
     >
