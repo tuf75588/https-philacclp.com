@@ -1,21 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {css} from '@emotion/core';
 import Container from '../container';
 import {FaPlusSquare} from 'react-icons/fa';
 import faqQuestions from '../../lib/questions.json';
 
 function FAQ() {
-  const [questions, setQuestions] = useState([]);
-  const [expanded, toggleExpand] = useState(false);
-  useEffect(() => {
-    console.log('re-rendering!');
-    setQuestions(faqQuestions);
-  });
+  const [questions, setQuestions] = useState(faqQuestions);
+  const toggleExpand = (q) => {
+    /* shallow copy of state */
+    const questionsList = [...questions];
+    let findByTitle = questions.find((item) => item.question === q.question);
+    let position = questions.findIndex((obj) => obj.question === q.question);
+    findByTitle.isExpanded = !findByTitle.isExpanded;
+    questionsList[position] = findByTitle;
+    setQuestions(questionsList);
+  };
   return (
     <Container>
       <h3 css={css``}>Frequently asked questions</h3>
       <ul>
-        {questions.map(({question, order, isExpanded, answer}) => {
+        {questions.map((item) => {
           return (
             <li
               css={css`
@@ -36,17 +40,18 @@ function FAQ() {
                   margin-top: 5px;
                 }
               `}
-              key={order}
+              key={item.question}
             >
-              <div onClick={() => console.log('clicked!')}>
+              <div onClick={() => toggleExpand(item)}>
                 <FaPlusSquare />
               </div>
 
-              <p>{question}</p>
+              <p>{item.question}</p>
             </li>
           );
         })}
       </ul>
+      {JSON.stringify(questions, 2, null)}
     </Container>
   );
 }
