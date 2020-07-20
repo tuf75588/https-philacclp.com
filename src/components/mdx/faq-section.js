@@ -17,36 +17,49 @@ function FAQ() {
   };
   return (
     <Container>
-      <h3 css={css``}>Frequently asked questions</h3>
+      <h3>Frequently asked questions</h3>
       <ul>
         {questions.map((item) => {
           return (
             <li
               css={css`
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                padding: 1rem;
                 list-style-type: none;
-                border: 0.5px solid rgba(0, 0, 0, 0.2);
-                padding: 15px;
-                border-radius: 5px;
-                display: flex;
-                align-items: center;
-
-                svg {
-                  height: 25px;
-                  width: 25px;
-                  cursor: pointer;
-                }
-                p {
-                  margin-left: 10px;
-                  margin-top: 5px;
-                }
               `}
               key={item.question}
             >
-              <div onClick={() => toggleExpand(item)}>
-                <FaPlusSquare />
-              </div>
-
-              <p>{item.question}</p>
+              <button
+                css={css`
+                  background: #000;
+                  height: 100%;
+                  padding: 2px 5px;
+                  margin-right: 10px;
+                  color: #000;
+                  background: #fff;
+                  &:hover {
+                    background: grey !important;
+                    color: #fff !important;
+                    transition: background-color 0.5s !important;
+                  }
+                  &:focus {
+                    outline: none;
+                  }
+                `}
+                onClick={() => toggleExpand(item)}
+              >
+                {item.isExpanded ? '-' : '+'}
+              </button>
+              {item.question}
+              {item.isExpanded && (
+                <div
+                  css={css`
+                    padding: 10px;
+                  `}
+                >
+                  {item.answer}
+                </div>
+              )}
             </li>
           );
         })}
