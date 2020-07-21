@@ -29,32 +29,24 @@ function FAQ() {
               `}
               key={item.question}
             >
-              <button
+              <div
                 css={css`
-                  background: #000;
-                  height: 100%;
                   padding: 2px 5px;
                   margin-right: 10px;
-                  color: #000;
-                  background: #fff;
-                  &:hover {
-                    background: grey !important;
-                    color: #fff !important;
-                    transition: background-color 0.5s !important;
-                  }
-                  &:focus {
-                    outline: none;
-                  }
+                  border: none;
+                  cursor: pointer;
+                  display: inline-block;
                 `}
                 onClick={() => toggleExpand(item)}
               >
                 {item.isExpanded ? '-' : '+'}
-              </button>
+              </div>
               {item.question}
               {item.isExpanded && (
                 <div
                   css={css`
                     padding: 10px;
+                    margin-top: 10px;
                   `}
                 >
                   {item.answer}
@@ -64,7 +56,6 @@ function FAQ() {
           );
         })}
       </ul>
-      {JSON.stringify(questions, 2, null)}
     </Container>
   );
 }
