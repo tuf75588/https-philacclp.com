@@ -34,5 +34,11 @@
     "question": "Can I schedule a visit for more than one child at a time?",
     "answer": "Yes. Please indicate the number of children in your household and their ages in your initial inquiry.",
     "isExpanded": false
+  },
+  {
+    "order": 7,
+    "question": "Do you accept insurance?",
+    "answer": "We do not accept medical insurance at this time.",
+    "isExpanded": false
   }
 ]

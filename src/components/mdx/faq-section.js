@@ -29,18 +29,19 @@ function FAQ() {
               `}
               key={item.question}
             >
-              <div
+              <button
                 css={css`
-                  padding: 2px 5px;
-                  margin-right: 10px;
-                  border: none;
+                  border: 0.5px solid rgba(0, 0, 0, 0.2);
                   cursor: pointer;
-                  display: inline-block;
+                  padding: 0;
+                  text-align: center;
+                  width: 20px;
+                  margin-right: 10px;
                 `}
                 onClick={() => toggleExpand(item)}
               >
                 {item.isExpanded ? '-' : '+'}
-              </div>
+              </button>
               {item.question}
               {item.isExpanded && (
                 <div
