@@ -7,6 +7,7 @@ import {css} from '@emotion/core';
 import Link from '../components/link';
 import theme from '../../config/theme';
 import IntroPhoto from '../components/intro-photograph';
+
 const Card = ({
   backgroundColor = '#E75248',
   title,
