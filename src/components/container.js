@@ -1,7 +1,6 @@
 import React from 'react';
 import {css} from '@emotion/core';
 import {bpMaxSM} from '../lib/breakpoints';
-
 const Container = (props) => {
   const {
     maxWidth = 720,
@@ -9,7 +8,6 @@ const Container = (props) => {
     noVerticalPadding = false,
     ...restProps
   } = props;
-  // helper function for helping to determine if we are at full max width -- Thanks to @kentcdodds for this!
   const fullMaxWidth = Number.isNaN(Number(maxWidth))
     ? maxWidth
     : `${maxWidth + (noHorizontalPadding ? 0 : 80)}px`;
