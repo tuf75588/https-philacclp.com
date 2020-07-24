@@ -1,17 +1,26 @@
 import React from 'react';
 import {css} from '@emotion/core';
-
-function ServicesCard() {}
-
-function ServicesScreen() {
+import Container from '../container';
+function ServicesCard() {
   return (
     <div
       css={css`
-        margin: 0 auto;
+        width: 200px;
+        height: 300px;
+        border: 1px solid black;
+        position: absolute;
       `}
     >
-      <h3>Our Services</h3>
+      card component
     </div>
+  );
+}
+
+function ServicesScreen() {
+  return (
+    <Container>
+      <ServicesCard />
+    </Container>
   );
 }
 
