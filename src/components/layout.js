@@ -18,8 +18,8 @@ import {bpMaxSM, bpMaxMD} from '../lib/breakpoints';
 import {fonts} from '../lib/typography';
 import reset from '../lib/reset';
 import mdxComponents from '../components/mdx';
+import Footer from './footer';
 // global styles for whole app
-
 export const globalStyles = css`
   .button-secondary {
     border-radius: 4px;
@@ -157,7 +157,7 @@ const DefaultHero = styled.section`
   }
 `;
 
-function Layout({children}) {
+function Layout({children, maxWidth = 720}) {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalStyles} />
@@ -178,6 +178,9 @@ function Layout({children}) {
         <Header />
         <Navigation />
         <MDXProvider components={mdxComponents}>{children}</MDXProvider>
+      </div>
+      <div>
+        <Footer maxWidth={maxWidth} />
       </div>
     </ThemeProvider>
   );
