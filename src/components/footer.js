@@ -3,6 +3,7 @@ import {css} from '@emotion/core';
 import theme from '../../config/theme';
 import {bpMaxSM} from '../lib/breakpoints';
 import Container from './container';
+import Subsribe from './forms/subscribeForm';
 function Footer({maxWidth}) {
   return (
     <footer
@@ -50,6 +51,7 @@ function Footer({maxWidth}) {
             <div>1</div>
           </div>
         </div>
+        <Subsribe />
       </Container>
     </footer>
   );

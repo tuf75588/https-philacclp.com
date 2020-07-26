@@ -78,7 +78,7 @@ const StyledForm = styled.form`
   ${formCss}
 `;
 
-const StyledFormFormikForm = styled(form)`
+const StyledFormikForm = styled(Form)`
   ${formCss}
 `;
 
@@ -123,3 +123,142 @@ export function TinyLetterSubscribe() {
     </SubscribeFormWrapper>
   );
 }
+
+function fetchReducer(state, {type, response, error}) {
+  switch (type) {
+    case 'fetching': {
+      return {error: null, response: null, pending: true};
+    }
+    case 'success': {
+      return {error: null, response, pending: false};
+    }
+    case 'error': {
+      return {error, response: null, pending: false};
+    }
+    default:
+      throw new Error(`Unsupported type ${type}`);
+  }
+}
+
+function useFetch({url, body}) {
+  const [state, dispatch] = React.useReducer(fetchReducer, {
+    error: null,
+    response: null,
+    pending: false,
+  });
+  const bodyString = JSON.stringify(body);
+  React.useEffect(() => {
+    if (url && bodyString) {
+      dispatch({type: 'fetching'});
+      fetch(url, {
+        method: 'post',
+        body: bodyString,
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((r) => r.json())
+        .then((response) => dispatch({type: 'success', response}))
+        .catch((error) => {
+          dispatch({type: 'error', error});
+        });
+    }
+  }, [url, bodyString]);
+  return state;
+}
+
+function Subscribe({style, tags = [], header = 'Join the Newsletter'}) {
+  console.log('clicked the subscribe button!');
+  const [values, setValues] = React.useState();
+  const {pending, response, error} = useFetch({
+    url: 'temporary-link.com',
+    body: values,
+  });
+  const errorMessage = error ? 'Something went wrong!' : null;
+  const submitted = Boolean(response);
+  const successfulResponse = response && response.status === 'success';
+  return (
+    <SubscribeFormWrapper style={style}>
+      {!successfulResponse && (
+        <h3
+          css={css`
+            margin-bottom: ${rhythm(1)};
+            margin-top: 0;
+            color: white;
+          `}
+        >
+          {header}
+        </h3>
+      )}
+      {!successfulResponse && (
+        <Formik
+          initialValues={{
+            email_address: '',
+            first_name: '',
+            tags,
+          }}
+          validationSchema={SubscribeSchema}
+          onSubmit={setValues}
+        >
+          {() => (
+            <StyledFormikForm>
+              <label htmlFor="first_name">
+                <div
+                  css={css`
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                  `}
+                >
+                  First Name
+                  <ErrorMessage
+                    name="first_name"
+                    component="span"
+                    className="field-error"
+                  />
+                </div>
+              </label>
+              <Field
+                id="first_name"
+                aria-required="false"
+                name="first_name"
+                placeholder="Jane"
+                type="text"
+              />
+              <label htmlFor="email">
+                <div
+                  css={css`
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                  `}
+                >
+                  Email
+                  <ErrorMessage
+                    name="email_address"
+                    component="span"
+                    className="field-error"
+                  />
+                </div>
+              </label>
+              <Field
+                id="email"
+                aria-required="true"
+                name="email_address"
+                placeholder="jane@acme.com"
+                type="email"
+              />
+              <button data-element="submit" type="submit">
+                {!pending && 'Subscribe'}
+                {pending && 'Submitting...'}
+              </button>
+            </StyledFormikForm>
+          )}
+        </Formik>
+      )}
+    </SubscribeFormWrapper>
+  );
+}
+
+export default Subscribe;
