@@ -4,7 +4,8 @@ import theme from '../../config/theme';
 import {bpMaxSM} from '../lib/breakpoints';
 import Container from './container';
 import Subsribe from './forms/subscribeForm';
-function Footer({maxWidth}) {
+import Subscribe from './forms/subscribeForm';
+function Footer({maxWidth, subscribeForm = <Subscribe />}) {
   return (
     <footer
       css={css`
@@ -27,7 +28,13 @@ function Footer({maxWidth}) {
           }
         `}
       >
-        footer component
+        {subscribeForm ? (
+          <div css={{marginTop: -40}}>
+            {subscribeForm}
+            <br />
+            <br />
+          </div>
+        ) : null}
         <div
           css={css`
             display: flex;
@@ -46,12 +53,11 @@ function Footer({maxWidth}) {
           `}
         >
           <div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
+            <div>Twitter icon</div>
+            <div>Instagram icon</div>
+            <div>RSS icon</div>
           </div>
         </div>
-        <Subsribe />
       </Container>
     </footer>
   );

@@ -67,10 +67,10 @@ const formCss = css`
       display: flex;
       flex-direction: column;
     }
-    button {
-      margin-top: 20px;
-      font-size: 16px;
-    }
+  }
+  button {
+    margin-top: 20px;
+    font-size: 16px;
   }
 `;
 
@@ -250,7 +250,7 @@ function Subscribe({style, tags = [], header = 'Join the Newsletter'}) {
                 type="email"
               />
               <button data-element="submit" type="submit">
-                {!pending && 'Subscribe'}
+                {!pending && 'Do not click this yet'}
                 {pending && 'Submitting...'}
               </button>
             </StyledFormikForm>

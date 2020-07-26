@@ -37,6 +37,16 @@ function FAQ() {
                   text-align: center;
                   width: 20px;
                   margin-right: 10px;
+                  background: lightgrey;
+                  color: #000;
+
+                  :hover {
+                    background: #000 !important;
+                    color: white;
+                  }
+                  :focus {
+                    outline: none;
+                  }
                 `}
                 onClick={() => toggleExpand(item)}
               >

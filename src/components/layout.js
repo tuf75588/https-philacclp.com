@@ -65,6 +65,25 @@ export const globalStyles = css`
     background: none !important;
     box-shadow: 0;
   }
+  button {
+    border-radius: 4px;
+    background-color: ${theme.colors.green};
+    border: none;
+    color: ${theme.colors.white};
+    padding: 8px 15px;
+    cursor: pointer;
+    border: 1px solid ${theme.colors.green};
+    transition: ${theme.transition.ease};
+    :hover:not(:disabled) {
+      background: ${theme.colors.link_color_hover};
+      border: 1px solid ${theme.colors.link_color_hover};
+      transition: ${theme.transition.ease};
+    }
+    :disabled {
+      opacity: 0.6;
+      cursor: auto;
+    }
+  }
 
   code {
     padding: 2px 4px;
