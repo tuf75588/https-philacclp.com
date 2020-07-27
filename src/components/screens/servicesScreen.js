@@ -2,7 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import theme from '../../../config/theme';
 import Container from '../container';
-function ServicesCard() {
+import {renderStatic} from 'react-helmet';
+function ServicesCard({text, price}) {
   return (
     <div
       css={{
@@ -17,11 +18,11 @@ function ServicesCard() {
         boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
       }}
     >
-      <h2 css={{marginTop: 0}}>Consultation</h2>
+      <h2 css={{marginTop: 0}}>{text}</h2>
       <div css={{width: '100%'}}>
         <button
           css={{
-            position: 'relative',
+            position: 'absolute',
             display: 'block',
             width: '100%',
             bottom: 0,
@@ -30,7 +31,7 @@ function ServicesCard() {
             borderTopRightRadius: '0',
           }}
         >
-          Find out more
+          {price}
         </button>
       </div>
     </div>
@@ -41,9 +42,21 @@ ServicesCard = React.memo(ServicesCard);
 
 function ServicesScreen() {
   return (
-    <Container>
-      <ServicesCard />
-    </Container>
+    <div
+      css={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        textAlign: 'center',
+      }}
+    >
+      <ServicesCard text="Initial Consultation (0-2 Years)" price="$250" />
+      <ServicesCard text="Initial Consultation (2-5 Years)" price="$300" />
+      <ServicesCard text="Follow up sessions (1 Hour)" price="$150" />
+      {/* ugly workaround for the moment */}
+
+      <ServicesCard text="Follow up sessions (30 Minutes)" price="$75" />
+    </div>
   );
 }
 
