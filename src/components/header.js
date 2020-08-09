@@ -5,10 +5,10 @@ import {useStaticQuery, graphql} from 'gatsby';
 function Header() {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: {eq: "cclp.png"}) {
+      file(relativePath: {eq: "pink.png"}) {
         id
         childImageSharp {
-          fixed(width: 200, height: 200) {
+          fixed(width: 700, height: 400) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -31,18 +31,13 @@ function Header() {
           margin-right: auto;
         `}
       >
-        <Img fixed={data.file.childImageSharp.fixed} />
+        <Img
+          fixed={data.file.childImageSharp.fixed}
+          css={css`
+            border-radius: 10px;
+          `}
+        />
       </div>
-      <p
-        css={css`
-          text-align: center;
-          font-family: 'Dancing Script', cursive;
-          font-size: 30px;
-          margin-bottom: 25px;
-        `}
-      >
-        Creating a limitless future through language and play
-      </p>
       <hr
         css={css`
           width: 50%;

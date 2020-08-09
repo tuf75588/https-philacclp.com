@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 function Hero() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: {eq: "hero.jpg"}) {
+      file(relativePath: {eq: "finalhero.png"}) {
         childImageSharp {
           # Specify a fluid image and fragment
           # The default maxWidth is 800 pixels

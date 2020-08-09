@@ -143,10 +143,9 @@ function IndexPage() {
           big
           backgroundColor={theme.colors.red}
           title="Our Services"
-          link="https://google.com"
+          link="/services"
           image={servicesImg}
-          description="Vestibulum ante ipsum primis in faucibus orci luctus et
-          ultrices posuere cubilia curae; Sed sed ultrices sem, eu"
+          description="We offer a range of different services for your conveninence, please click anywhere here to learn more."
         />
       </Container>
     </Layout>
