@@ -120,7 +120,7 @@ function IndexPage() {
           justify-content: center;
         `}
       >
-        <div style={{width: 400}}>
+        <div style={{width: 400, height: '100%'}}>
           <IntroPhoto />
         </div>
         <span
@@ -129,13 +129,25 @@ function IndexPage() {
             width: 300px;
           `}
         >
-          Fusce finibus euismod eros, sed imperdiet enim ultrices eget. Aenean
-          hendrerit sagittis lacus, ac ornare ipsum. Etiam vel risus magna.
-          Nulla dictum mi ut quam ultrices congue. Sed eu elit dictum ex
-          elementum dictum eu eget nunc. Nullam lacinia dui ante. Aenean vel
-          feugiat est, at cursus libero. Aliquam a eleifend dolor, sed lobortis
-          lacus. Vestibulum ante ipsum primis in faucibus orci luctus et
-          ultrices posuere cubilia curae; Sed sed ultrices sem, eu
+          Center City Language and Play provides one-on-one sessions of skilled
+          care-giver coaching and training. The entire visit is spent with a
+          pediatric speech therapist and is personally tailored to your child to
+          help promote his or her language and play development.
+          <p
+            css={css`
+              padding-top: 10px;
+            `}
+          >
+            I work with you and your child within the place where you are most
+            comfortable...in your home! Home-based services provide many
+            benefits for your child. It offers convenience, allows for a
+            comprehensive assessment of your child's true capabilities and
+            assess function in the environment that is most familiar. This
+            allows the therapist to capitalize on the child's everyday routine
+            and create success. Sessions will incorporate your child's favorite
+            toys, work on daily routines and activities, and encourage caregiver
+            confidence in working with their child at home.
+          </p>
         </span>
       </div>
       <Container>
