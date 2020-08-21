@@ -103,6 +103,19 @@ const Card = ({
 function IndexPage() {
   return (
     <Layout>
+      <p
+        css={css`
+          width: 500px;
+          text-align: center;
+          margin: 0 auto;
+          font-family: ${theme.fonts.light};
+        `}
+      >
+        Center City Language and Play provides parent/caregiver training
+        sessions focused on speech, language, and play skills. Visits are spent
+        with a pediatric speech language pathologist and are designed to help
+        promote your child’s speech, language, and play skills.{' '}
+      </p>
       <Container
         css={css`
           margin-top: -20px;
@@ -157,7 +170,9 @@ function IndexPage() {
           title="Our Services"
           link="/services"
           image={servicesImg}
-          description="We offer a range of different services for your conveninence, please click anywhere here to learn more."
+          description="Increase parent/caregiver knowledge regarding speech, language, and play milestones
+          Help families develop and learn personally tailored strategies and ideas to nurture and stimulate skills
+          Provide on-going support for families throughout each stage of development."
         />
       </Container>
     </Layout>

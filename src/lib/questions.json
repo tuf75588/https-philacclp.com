@@ -40,5 +40,11 @@
     "question": "Do you accept insurance?",
     "answer": "We do not accept medical insurance at this time.",
     "isExpanded": false
+  },
+  {
+    "order": 8,
+    "question": "Where do sessions take place?",
+    "answer": "Our sessions take place where you are most comfortable...your home! Home-based services provide many benefits for your child. It offers convenience and allows for a comprehensive assessment of your child's skills. Sessions will incorporate your child's favorite toys, work on daily routines and activities, and encourage caregiver confidence in working with their child at home",
+    "isExpanded": false
   }
 ]

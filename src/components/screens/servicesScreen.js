@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import theme from '../../../config/theme';
 import Container from '../container';
+import {css} from '@emotion/core';
 import {renderStatic} from 'react-helmet';
 function ServicesCard({text, price}) {
   return (
@@ -43,12 +44,11 @@ ServicesCard = React.memo(ServicesCard);
 function ServicesScreen() {
   return (
     <div
-      css={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        textAlign: 'center',
-      }}
+      css={css`
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+      `}
     >
       <ServicesCard text="Initial Consultation (0-2 Years)" price="$250" />
       <ServicesCard text="Initial Consultation (2-5 Years)" price="$300" />
