@@ -118,17 +118,7 @@ function IndexPage() {
         with a pediatric speech language pathologist and are designed to help
         promote your child’s speech, language, and play skills.{' '}
       </p>
-      <Container
-        css={css`
-          margin-top: -20px;
-          position: relative;
-          border-radius: 5px;
-          padding: 40px 80px 60px 80px;
-        `}
-      >
-        <Hero />
-      </Container>
-
+      <Hero />
       <div
         css={css`
           display: flex;

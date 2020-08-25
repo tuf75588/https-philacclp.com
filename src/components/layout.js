@@ -203,10 +203,11 @@ function Layout({children, maxWidth = 720}) {
         `}
       >
         {/* <Header />
-        <Navigation />
-        <MDXProvider components={mdxComponents}>{children}</MDXProvider> */}
+         */}
         <div css={{flex: '1 0 auto'}}>
           <Header />
+          <Navigation />
+          <MDXProvider components={mdxComponents}>{children}</MDXProvider>
         </div>
         <Footer maxWidth={maxWidth} />
       </div>

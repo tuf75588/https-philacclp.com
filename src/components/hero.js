@@ -9,7 +9,7 @@ function Hero() {
         childImageSharp {
           # Specify a fluid image and fragment
           # The default maxWidth is 800 pixels
-          fluid(maxWidth: 900, quality: 100) {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -19,8 +19,9 @@ function Hero() {
   return (
     <div
       css={css`
-        max-width: 900px;
-        margin: 0 auto;
+        margin: 3rem auto;
+        max-width: 1000px;
+        max-height: 1000px;
       `}
     >
       <Img
