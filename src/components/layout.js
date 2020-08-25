@@ -19,6 +19,7 @@ import {fonts} from '../lib/typography';
 import reset from '../lib/reset';
 import mdxComponents from '../components/mdx';
 import Footer from './footer';
+
 // global styles for whole app
 export const globalStyles = css`
   .button-secondary {
@@ -145,6 +146,13 @@ export const globalStyles = css`
   h6:hover .anchor svg {
     opacity: 1;
   }
+  .item {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    text-align: center;
+    padding: 1rem;
+  }
   ${reset};
 `;
 
@@ -194,11 +202,12 @@ function Layout({children, maxWidth = 720}) {
           min-height: 100vh;
         `}
       >
-        <Header />
+        {/* <Header />
         <Navigation />
-        <MDXProvider components={mdxComponents}>{children}</MDXProvider>
-      </div>
-      <div>
+        <MDXProvider components={mdxComponents}>{children}</MDXProvider> */}
+        <div css={{flex: '1 0 auto'}}>
+          <Header />
+        </div>
         <Footer maxWidth={maxWidth} />
       </div>
     </ThemeProvider>

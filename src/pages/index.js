@@ -27,6 +27,7 @@ const Card = ({
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 10px;
       h4 {
         font-size: 22px;
         padding: ${big ? '0 20px 0 40px' : '40px 40px 0 40px'};
@@ -63,6 +64,7 @@ const Card = ({
         `
         align-items: flex-start;
         flex-direction: column;
+    
         img {
           margin-top: 20px;
         }
@@ -165,7 +167,6 @@ function IndexPage() {
       </div>
       <Container>
         <Card
-          big
           backgroundColor={theme.colors.red}
           title="Our Services"
           link="/services"
@@ -173,6 +174,7 @@ function IndexPage() {
           description="Increase parent/caregiver knowledge regarding speech, language, and play milestones
           Help families develop and learn personally tailored strategies and ideas to nurture and stimulate skills
           Provide on-going support for families throughout each stage of development."
+          big
         />
       </Container>
     </Layout>
