@@ -38,8 +38,9 @@ const Card = ({
         opacity: 0.85;
         ${bpMaxSM} {
           padding: 20px 20px 0 40px;
-        }
+       }
       }
+  
       ${bpMaxMD} {
           flex-direction: column;
           align-items: center;

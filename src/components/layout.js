@@ -146,13 +146,6 @@ export const globalStyles = css`
   h6:hover .anchor svg {
     opacity: 1;
   }
-  .item {
-    width: 200px;
-    height: 200px;
-    border: 1px solid red;
-    text-align: center;
-    padding: 1rem;
-  }
   ${reset};
 `;
 
