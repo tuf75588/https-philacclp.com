@@ -6,7 +6,7 @@ function IntroPhotograph() {
     query {
       file(relativePath: {eq: "intro.jpg"}) {
         childImageSharp {
-          fixed(width: 300, height: 500) {
+          fixed(width: 400, height: 600) {
             ...GatsbyImageSharpFixed
           }
         }
