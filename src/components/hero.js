@@ -19,7 +19,7 @@ function Hero() {
   return (
     <div
       css={css`
-        margin: 3rem auto;
+        margin: 2rem auto 2rem auto;
         max-width: 1000px;
         max-height: 1000px;
       `}

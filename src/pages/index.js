@@ -120,19 +120,29 @@ function IndexPage() {
         promote your child’s speech, language, and play skills.{' '}
       </p>
       <Hero />
+
       <div
-        css={css`
-          display: flex;
-          justify-content: center;
-        `}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+
+          width: '100%',
+        }}
+        className="outer-element"
       >
-        <div style={{width: 400, height: '100%'}}>
+        <p
+          css={css`
+            padding-left: 1rem;
+            padding-top: 1rem;
+          `}
+        >
           <IntroPhoto />
-        </div>
+        </p>
         <span
           css={css`
-            margin-left: 1rem;
-            width: 300px;
+            width: 40%;
+            padding-right: 1rem;
           `}
         >
           Center City Language and Play provides one-on-one sessions of skilled
@@ -141,7 +151,7 @@ function IndexPage() {
           help promote his or her language and play development.
           <p
             css={css`
-              padding-top: 10px;
+              margin-top: 2rem;
             `}
           >
             I work with you and your child within the place where you are most
@@ -156,6 +166,7 @@ function IndexPage() {
           </p>
         </span>
       </div>
+
       <Container>
         <Card
           backgroundColor={theme.colors.red}

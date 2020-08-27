@@ -6,15 +6,15 @@ function IntroPhotograph() {
     query {
       file(relativePath: {eq: "intro.jpg"}) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 300, height: 500) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `);
 
-  return <Img fluid={data.file.childImageSharp.fluid} />;
+  return <Img fixed={data.file.childImageSharp.fixed} />;
 }
 
 export default IntroPhotograph;
