@@ -107,10 +107,28 @@ const Card = ({
           `}
         />
       </h4>
-
-      {children}
+      <ul
+        css={css`
+          padding: 10px;
+          li {
+            margin: 5px;
+            padding: 0;
+          }
+        `}
+      >
+        {children}
+      </ul>
     </div>
-    {image && <img src={image} alt={title} />}
+    {image && (
+      <img
+        src={image}
+        css={css`
+          height: 100%;
+          width: 100%;
+        `}
+        alt={title}
+      />
+    )}
   </Link>
 );
 
@@ -173,18 +191,6 @@ function IndexPage() {
             with a pediatric speech therapist and is personally tailored to your
             child to help promote his or her language and play development.
           </p>
-
-          <p>
-            I work with you and your child within the place where you are most
-            comfortable...in your home! Home-based services provide many
-            benefits for your child. It offers convenience, allows for a
-            comprehensive assessment of your child's true capabilities and
-            assess function in the environment that is most familiar. This
-            allows the therapist to capitalize on the child's everyday routine
-            and create success. Sessions will incorporate your child's favorite
-            toys, work on daily routines and activities, and encourage caregiver
-            confidence in working with their child at home.
-          </p>
         </div>
       </div>
 
@@ -196,11 +202,18 @@ function IndexPage() {
           image={servicesImg}
           big
         >
-          <li>one</li>
-          <li>two</li>
-          <li>three</li>
-          <li>four</li>
-          <li>five</li>
+          <li>
+            Increase parent/caregiver knowledge regarding speech, language, and
+            play milestones{' '}
+          </li>
+          <li>
+            Help famipes develop and learn personally tailored strategies and
+            ideas to nurture and stimulate skills{' '}
+          </li>
+          <li>
+            Provide on-going support for famipes throughout each stage of
+            development
+          </li>
         </Card>
       </Container>
     </Layout>
@@ -229,4 +242,18 @@ export default IndexPage;
             confidence in working with their child at home.
           </p>
         </div>
+*/
+
+/* 
+          <p>
+            I work with you and your child within the place where you are most
+            comfortable...in your home! Home-based services provide many
+            benefits for your child. It offers convenience, allows for a
+            comprehensive assessment of your child's true capabilities and
+            assess function in the environment that is most familiar. This
+            allows the therapist to capitalize on the child's everyday routine
+            and create success. Sessions will incorporate your child's favorite
+            toys, work on daily routines and activities, and encourage caregiver
+            confidence in working with their child at home.
+          </p>
 */

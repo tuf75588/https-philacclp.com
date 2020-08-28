@@ -25,7 +25,6 @@ function Header() {
           padding-left: 1rem;
           display: flex;
           justify-content: center;
-          background: purple;
           opacity: 0.7;
           margin-bottom: 0.5rem;
           margin-left: auto;
