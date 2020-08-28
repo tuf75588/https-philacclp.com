@@ -15,6 +15,7 @@ const Card = ({
   description,
   big = false,
   image,
+  children,
 }) => (
   <Link
     to={link}
@@ -26,11 +27,10 @@ const Card = ({
       }
       display: flex;
       justify-content: space-between;
-      align-items: center;
       padding: 10px;
       h4 {
         font-size: 22px;
-        padding: ${big ? '0 20px 0 40px' : '40px 40px 0 40px'};
+        padding: ${big ? '0 20px 0 0' : '40px 40px 0 40px'};
       }
       p {
         padding: 20px 40px 0 40px;
@@ -39,6 +39,9 @@ const Card = ({
         ${bpMaxSM} {
           padding: 20px 20px 0 40px;
        }
+      }
+      .title {
+        margin-bottom: 1rem;
       }
   
       ${bpMaxMD} {
@@ -96,8 +99,16 @@ const Card = ({
     `}
   >
     <div>
-      <h4>{title}</h4>
-      {description && <p>{description}</p>}
+      <h4 className="title">
+        {title}
+        <hr
+          css={css`
+            opacity: 0.5;
+          `}
+        />
+      </h4>
+
+      {children}
     </div>
     {image && <img src={image} alt={title} />}
   </Link>
@@ -180,14 +191,17 @@ function IndexPage() {
       <Container>
         <Card
           backgroundColor={theme.colors.red}
-          title="Our Services"
+          title="What we offer"
           link="/services"
           image={servicesImg}
-          description="Increase parent/caregiver knowledge regarding speech, language, and play milestones
-          Help families develop and learn personally tailored strategies and ideas to nurture and stimulate skills
-          Provide on-going support for families throughout each stage of development."
           big
-        />
+        >
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+          <li>four</li>
+          <li>five</li>
+        </Card>
       </Container>
     </Layout>
   );

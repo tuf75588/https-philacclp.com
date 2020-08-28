@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import theme from '../../../config/theme';
 import Container from '../container';
 import {css} from '@emotion/core';
 import {bpMaxSM} from '../../lib/breakpoints';
@@ -47,7 +45,7 @@ function ServicesScreen() {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 1.5}}
+          transition={{duration: 0.8}}
           className="item"
         >
           <p className="price">
@@ -57,7 +55,7 @@ function ServicesScreen() {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 1.5}}
+          transition={{duration: 0.8}}
           className="item"
         >
           <p className="price">Price will go here</p>
@@ -65,7 +63,7 @@ function ServicesScreen() {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 1.5}}
+          transition={{duration: 0.8}}
           className="item"
         >
           <p className="price">Price will go here</p>
@@ -73,7 +71,7 @@ function ServicesScreen() {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 1.5}}
+          transition={{duration: 0.8}}
           className="item"
         >
           <p className="price">Price will go here</p>
@@ -81,7 +79,7 @@ function ServicesScreen() {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 1.5}}
+          transition={{duration: 0.8}}
           className="item"
         >
           <p className="price">Price will go here</p>
@@ -89,7 +87,7 @@ function ServicesScreen() {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 1.5}}
+          transition={{duration: 0.8}}
           className="item"
         >
           <p className="price">Price will go here</p>
