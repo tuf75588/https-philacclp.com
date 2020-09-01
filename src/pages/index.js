@@ -8,6 +8,7 @@ import Link from '../components/link';
 import theme from '../../config/theme';
 import IntroPhoto from '../components/intro-photograph';
 import servicesImg from '../images/servicesImg.svg';
+import {AiFillStar} from 'react-icons/ai';
 const Card = ({
   backgroundColor = '#E75248',
   title,
@@ -42,6 +43,7 @@ const Card = ({
       }
       .title {
         margin-bottom: 1rem;
+        text-align: center;
       }
   
       ${bpMaxMD} {
@@ -158,64 +160,62 @@ function IndexPage() {
           fontFamily: 'Montserrat sans-serif',
         }}
       >
-        Why us?
+        Our Services
       </h1>
 
       <div
         style={{
           display: 'flex',
-          margin: '4rem auto 0 auto',
+          margin: '2rem auto 0 auto',
           width: 720,
+          padding: '2rem 0',
+          alignItems: 'center',
         }}
         className="outer-element"
       >
-        <picture
-          css={css`
-            width: 100%;
-          `}
-        >
+        <picture>
           <IntroPhoto />
         </picture>
-        <div
+
+        <ul
           css={css`
-            p {
-              padding-left: 2rem;
-              font-size: 0.9rem;
-              font-family: 'Montserrat', sans-serif;
+            margin-left: 10px;
+            li {
+              font-size: 1.1rem;
+              padding: 0.8rem;
+              list-style-type: none;
+              span {
+                margin-right: 4px;
+                svg {
+                  margin-bottom: 4px;
+                }
+              }
             }
           `}
         >
-          <p>
-            Center City Language and Play provides one-on-one sessions of
-            skilled care-giver coaching and training. The entire visit is spent
-            with a pediatric speech therapist and is personally tailored to your
-            child to help promote his or her language and play development.
-          </p>
-        </div>
-      </div>
-
-      <Container>
-        <Card
-          backgroundColor={theme.colors.red}
-          title="What we offer"
-          link="/services"
-          image={servicesImg}
-          big
-        >
           <li>
+            <span>
+              <AiFillStar />
+            </span>
             Increase parent/caregiver knowledge regarding speech, language, and
-            play milestones{' '}
+            play milestones
           </li>
           <li>
-            Help famipes develop and learn personally tailored strategies and
-            ideas to nurture and stimulate skills{' '}
+            <span>
+              <AiFillStar />
+            </span>
+            Help families develop and learn personally tailored strategies and
+            ideas to nurture and stimulate skills
           </li>
           <li>
-            Provide on-going support for famipes throughout each stage of
+            <span>
+              <AiFillStar />
+            </span>
+            Provide on-going support for families throughout each stage of
             development
           </li>
-        </Card>
-      </Container>
+        </ul>
+      </div>
     </Layout>
   );
 }
