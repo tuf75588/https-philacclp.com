@@ -148,7 +148,7 @@ function IndexPage() {
         Center City Language and Play provides parent/caregiver training
         sessions focused on speech, language, and play skills. Visits are spent
         with a pediatric speech language pathologist and are designed to help
-        promote your child’s speech, language, and play skills.{' '}
+        enrich your child’s development.
       </p>
       <Hero />
 
