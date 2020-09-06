@@ -14,7 +14,6 @@ const Container = (props) => {
   return (
     <div
       css={css`
-        width: 100%;
         margin: 0 auto;
         max-width: ${fullMaxWidth};
         padding: ${noVerticalPadding ? 0 : '40'}px

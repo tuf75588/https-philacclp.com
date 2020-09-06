@@ -8,8 +8,8 @@ function Header() {
       file(relativePath: {eq: "pink.png"}) {
         id
         childImageSharp {
-          fixed(width: 700, height: 400) {
-            ...GatsbyImageSharpFixed
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -29,12 +29,15 @@ function Header() {
           margin-bottom: 0.5rem;
           margin-left: auto;
           margin-right: auto;
+          max-width: 500px;
+          max-height: 300px;
         `}
       >
         <Img
-          fixed={data.file.childImageSharp.fixed}
+          fluid={data.file.childImageSharp.fluid}
           css={css`
             border-radius: 10px;
+            width: 100%;
             -webkit-box-shadow: 0 10px 6px -6px #777;
             -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;

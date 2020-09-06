@@ -139,10 +139,14 @@ function IndexPage() {
     <Layout>
       <p
         css={css`
-          width: 500px;
+          padding: 1.1rem;
           text-align: center;
           margin: 0 auto;
+          width: 100%;
           font-family: ${theme.fonts.light};
+          @media (min-width: 1024px) {
+            width: 500px;
+          }
         `}
       >
         Center City Language and Play provides parent/caregiver training
