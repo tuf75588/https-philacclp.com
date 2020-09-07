@@ -1,20 +1,21 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import {useStaticQuery, graphql} from 'gatsby';
+import {css} from '@emotion/core';
 function IntroPhotograph() {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "intro.jpg"}) {
         childImageSharp {
-          fixed(width: 400, height: 500) {
-            ...GatsbyImageSharpFixed
+          fluid(quality: 100, maxWidth: 400, maxHeight: 500) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `);
 
-  return <Img fixed={data.file.childImageSharp.fixed} />;
+  return <Img fluid={data.file.childImageSharp.fluid} />;
 }
 
 export default IntroPhotograph;
