@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {useStaticQuery, graphql} from 'gatsby';
 import Layout from '../components/layout';
 import Container from '../components/container';
@@ -11,7 +10,7 @@ const AboutPage = () => {
     query {
       file(relativePath: {eq: "images/baby.jpg"}) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxHeight: 700) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -21,38 +20,33 @@ const AboutPage = () => {
   return (
     <Layout>
       <Container
-        maxWidth={1200}
         css={css`
           display: flex;
           align-items: center;
-          justify-content: space-around;
-          @media (max-width: 800px) {
+          padding: 10px;
+          p {
+            font-family: ${theme.fonts.light};
+            font-size: 0.9rem;
+            line-height: 2.1;
+            margin-left: 40px;
+            width: 60%;
+          }
+          @media (max-width: 900px) {
             flex-direction: column;
             .baby {
-              width: 400px;
+              width: 300px;
             }
             p {
-              width: 80%;
+              width: 90%;
+              font-size: 16px;
             }
           }
         `}
       >
-        <div
-          css={css`
-            width: 40%;
-          `}
-        >
+        <div css={css``}>
           <Img fluid={data.file.childImageSharp.fluid} className="baby" />
         </div>
-        <p
-          css={css`
-            font-family: ${theme.fonts.light};
-            font-size: 1rem;
-            line-height: 2.1;
-
-            width: 50%;
-          `}
-        >
+        <p>
           Elaine has been a licensed speech language pathologist since 2014 and
           received her Masters in Speech Language Pathology in 2014 from The
           University of Maryland. She holds a Certificate of Clinical Competency
