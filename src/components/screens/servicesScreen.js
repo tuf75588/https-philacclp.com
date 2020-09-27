@@ -81,7 +81,7 @@ function ServicesScreen() {
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           transition={{duration: 0.8}}
-          className="item"
+          className="item last-card"
         >
           <p className="price">Price will go here</p>
         </motion.div>
