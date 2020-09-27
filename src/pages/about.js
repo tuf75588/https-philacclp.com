@@ -49,7 +49,11 @@ const AboutPage = () => {
           }
         `}
       >
-        <motion.div transition={{duration: 2}}>
+        <motion.div
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{ease: 'anticipate', duration: 2}}
+        >
           <Img fluid={data.file.childImageSharp.fluid} className="baby" />
         </motion.div>
         <p>

@@ -11,7 +11,7 @@ function ServicesScreen() {
         css={css`
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           gap: 10px;
 
           .item {
@@ -26,6 +26,7 @@ function ServicesScreen() {
             text-align: center;
             position: relative;
             height: 300px;
+            width: 100%;
           }
           .price {
             position: absolute;
@@ -51,14 +52,6 @@ function ServicesScreen() {
           <p className="price">
             <span className="text">Price will go here</span>
           </p>
-        </motion.div>
-        <motion.div
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{duration: 0.8}}
-          className="item"
-        >
-          <p className="price">Price will go here</p>
         </motion.div>
         <motion.div
           initial={{opacity: 0}}
