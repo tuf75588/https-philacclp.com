@@ -5,12 +5,13 @@ import Container from '../components/container';
 import {css} from '@emotion/core';
 import theme from '../../config/theme';
 import Img from 'gatsby-image';
+import {motion} from 'framer-motion';
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "images/baby.jpg"}) {
         childImageSharp {
-          fluid(quality: 100, maxHeight: 700) {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -24,6 +25,11 @@ const AboutPage = () => {
           display: flex;
           align-items: center;
           padding: 10px;
+          .baby {
+            width: 300px;
+            height: 100%;
+            border-radius: 10px;
+          }
           p {
             font-family: ${theme.fonts.light};
             font-size: 0.9rem;
@@ -43,9 +49,9 @@ const AboutPage = () => {
           }
         `}
       >
-        <div css={css``}>
+        <motion.div transition={{duration: 2}}>
           <Img fluid={data.file.childImageSharp.fluid} className="baby" />
-        </div>
+        </motion.div>
         <p>
           Elaine has been a licensed speech language pathologist since 2014 and
           received her Masters in Speech Language Pathology in 2014 from The
