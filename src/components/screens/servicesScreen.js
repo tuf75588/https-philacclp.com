@@ -6,8 +6,8 @@ import {motion} from 'framer-motion';
 
 function ServicesScreen() {
   return (
-    <Container>
-      <motion.div
+    <Container maxWidth={1000}>
+      <div
         css={css`
           margin: 0 auto;
           display: grid;
@@ -37,7 +37,11 @@ function ServicesScreen() {
             top: 0;
             left: 0;
           }
-
+          .info {
+            margin: 100px 0;
+            width: 100%;
+            padding: 0;
+          }
           ${bpMaxSM} {
             background: red;
           }
@@ -49,9 +53,10 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <p className="price">
-            <span className="text">Price will go here</span>
-          </p>
+          <p className="price">$250</p>
+          <div className="info">
+            <span>Initial Consultation (0-2 Years)</span>
+          </div>
         </motion.div>
         <motion.div
           initial={{opacity: 0}}
@@ -59,7 +64,10 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <p className="price">Price will go here</p>
+          <p className="price">$300</p>
+          <div className="info">
+            <span>Initial Consultation (2-5 Years)</span>
+          </div>
         </motion.div>
         <motion.div
           initial={{opacity: 0}}
@@ -67,7 +75,10 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <p className="price">Price will go here</p>
+          <p className="price">$150</p>
+          <div className="info">
+            <span>Follow up sessions (1 Hour)</span>
+          </div>
         </motion.div>
         <motion.div
           initial={{opacity: 0}}
@@ -75,17 +86,12 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <p className="price">Price will go here</p>
+          <p className="price">$75</p>
+          <div className="info">
+            <span>Follow up sessions (30 minutes)</span>
+          </div>
         </motion.div>
-        <motion.div
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{duration: 0.8}}
-          className="item last-card"
-        >
-          <p className="price">Price will go here</p>
-        </motion.div>
-      </motion.div>
+      </div>
     </Container>
   );
 }

@@ -58,6 +58,7 @@ function FAQ() {
                   css={css`
                     padding: 10px;
                     margin-top: 10px;
+                    font-weight: bold;
                   `}
                 >
                   {item.answer}
