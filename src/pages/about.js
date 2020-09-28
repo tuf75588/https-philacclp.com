@@ -9,7 +9,7 @@ import {motion} from 'framer-motion';
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: {eq: "images/baby.jpg"}) {
+      file(relativePath: {eq: "baby.jpg"}) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
@@ -18,6 +18,7 @@ const AboutPage = () => {
       }
     }
   `);
+  console.log(data);
   return (
     <Layout>
       <Container
