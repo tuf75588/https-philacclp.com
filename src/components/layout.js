@@ -22,6 +22,13 @@ import Footer from './footer';
 
 // global styles for whole app
 export const globalStyles = css`
+  :root {
+    --clr-dark: rgb(13, 17, 19);
+    --clr-light: #fff;
+    --clr-accent: rgb(222, 52, 0);
+    --clr-accent-dark: rgb(163, 38, 0);
+    --clr-secondary: rgb(0, 62, 163);
+  }
   .button-secondary {
     border-radius: 4px;
     padding: 12px 12px;

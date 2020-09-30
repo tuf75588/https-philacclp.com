@@ -3,7 +3,7 @@ import Container from '../container';
 import {css} from '@emotion/core';
 import {bpMaxSM} from '../../lib/breakpoints';
 import {motion} from 'framer-motion';
-
+import image from '../../images/card-image.jpg';
 function ServicesScreen() {
   return (
     <Container maxWidth={1000}>
@@ -22,28 +22,21 @@ function ServicesScreen() {
               rgba(169, 217, 243, 1) 90%
             );
             border-radius: 2px;
-            padding: 2rem;
             text-align: center;
             position: relative;
-            height: 300px;
-            width: 100%;
+            padding: 0 !important;
+            border: 1px solid black;
           }
-          .price {
-            position: absolute;
-            width: 100%;
-            background: white;
-            padding: 1rem;
-            opacity: 0.7;
-            top: 0;
-            left: 0;
+
+          .front img {
+            display: block;
+            margin-bottom: 0;
+            opacity: 0.5;
           }
-          .info {
-            margin: 100px 0;
-            width: 100%;
-            padding: 0;
-          }
-          ${bpMaxSM} {
-            background: red;
+          .item:hover {
+            transform: scale(1.5);
+            transition: all 0.5s ease;
+            z-index: 10;
           }
         `}
       >
@@ -53,10 +46,12 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <p className="price">$250</p>
-          <div className="info">
-            <span>Initial Consultation (0-2 Years)</span>
+          <div className="front">
+            <img src={image} />
+            <h3>initial consultation</h3>
           </div>
+
+          <div className="back"></div>
         </motion.div>
         <motion.div
           initial={{opacity: 0}}
@@ -64,10 +59,8 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <p className="price">$300</p>
-          <div className="info">
-            <span>Initial Consultation (2-5 Years)</span>
-          </div>
+          <div className="front"></div>
+          <div className="back"></div>
         </motion.div>
         <motion.div
           initial={{opacity: 0}}
@@ -75,10 +68,8 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <p className="price">$150</p>
-          <div className="info">
-            <span>Follow up sessions (1 Hour)</span>
-          </div>
+          <div className="front"></div>
+          <div className="back"></div>
         </motion.div>
         <motion.div
           initial={{opacity: 0}}
@@ -86,10 +77,8 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <p className="price">$75</p>
-          <div className="info">
-            <span>Follow up sessions (30 minutes)</span>
-          </div>
+          <div className="front"></div>
+          <div className="back"></div>
         </motion.div>
       </div>
     </Container>
