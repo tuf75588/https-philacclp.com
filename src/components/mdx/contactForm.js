@@ -1,8 +1,38 @@
 import React from 'react';
 import {css} from '@emotion/core';
 import Container from '../container';
+import {navigate} from 'gatsby';
+
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
+    })
+    .join('&');
+}
+
 function ContactForm() {
-  const [clicked, toggleClick] = React.useState(false);
+  const [state, setState] = React.useState({});
+
+  const handleChange = (e) => {
+    setState({...state, [e.target.name]: e.target.value});
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error));
+  };
+
   return (
     <Container>
       <div
@@ -29,10 +59,23 @@ function ContactForm() {
         `}
       >
         <h2>Contact us</h2>
-        <form>
+        <form
+          name="contact"
+          method="post"
+          action="/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
           <label htmlFor="first-name">first name</label>
           <div>
-            <input type="text" name="name" id="first-name" placeholder="Jane" />
+            <input
+              type="text"
+              name="name"
+              onChange={handleChange}
+              id="first-name"
+              placeholder="Jane"
+            />
           </div>
           <label htmlFor="last-name">last name</label>
           <div>
@@ -41,6 +84,7 @@ function ContactForm() {
               id="last-name"
               name="last-name"
               placeholder="Doe"
+              onChange={handleChange}
             />
           </div>
           <label htmlFor="message">message</label>
@@ -50,10 +94,11 @@ function ContactForm() {
               id="message"
               placeholder="message...."
               name="message"
+              onChange={handleChange}
             ></textarea>
           </div>
+          <button type="submit">Submit</button>
         </form>
-        <button onClick={() => toggleClick(!clicked)}>Submit</button>
       </div>
     </Container>
   );
