@@ -4,6 +4,9 @@ import {css} from '@emotion/core';
 import {bpMaxSM} from '../../lib/breakpoints';
 import {motion} from 'framer-motion';
 import image from '../../images/card-image.jpg';
+import image2 from '../../images/card-image2.jpg';
+import image3 from '../../images/card-image3.jpg';
+import image4 from '../../images/card-image4.jpg';
 function ServicesScreen() {
   return (
     <Container maxWidth={1000}>
@@ -23,18 +26,18 @@ function ServicesScreen() {
             );
             border-radius: 2px;
             text-align: center;
-            position: relative;
-            padding: 0 !important;
-            border: 1px solid black;
+
+            padding: 0;
           }
 
           .front img {
             display: block;
             margin-bottom: 0;
             opacity: 0.5;
+            height: 200px;
           }
           .item:hover {
-            transform: scale(1.5);
+            transform: scale(1.25);
             transition: all 0.5s ease;
             z-index: 10;
           }
@@ -48,7 +51,7 @@ function ServicesScreen() {
         >
           <div className="front">
             <img src={image} />
-            <h3>initial consultation</h3>
+            <p>initial consultation</p>
           </div>
 
           <div className="back"></div>
@@ -59,7 +62,10 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <div className="front"></div>
+          <div className="front">
+            <img src={image2} />
+            <p>initial consultation</p>
+          </div>
           <div className="back"></div>
         </motion.div>
         <motion.div
@@ -68,7 +74,11 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <div className="front"></div>
+          <div className="front">
+            <img src={image3} />
+            <p>initial consultation</p>
+          </div>
+
           <div className="back"></div>
         </motion.div>
         <motion.div
@@ -77,7 +87,11 @@ function ServicesScreen() {
           transition={{duration: 0.8}}
           className="item"
         >
-          <div className="front"></div>
+          <div className="front">
+            <img src={image4} />
+            <p>initial consultation</p>
+          </div>
+
           <div className="back"></div>
         </motion.div>
       </div>
