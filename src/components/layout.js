@@ -155,7 +155,6 @@ export const globalStyles = css`
   }
   ${reset};
 `;
-
 const DefaultHero = styled.section`
   * {
     color: ${theme.colors.white};
