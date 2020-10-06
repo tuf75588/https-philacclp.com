@@ -29,6 +29,9 @@ function ServicesScreen() {
 
             padding: 0;
           }
+          .front p {
+            font-size: 15px;
+          }
 
           .front img {
             display: block;
@@ -40,6 +43,7 @@ function ServicesScreen() {
             transform: scale(1.25);
             transition: all 0.5s ease;
             z-index: 10;
+            font-size: inherit;
           }
         `}
       >
@@ -51,7 +55,8 @@ function ServicesScreen() {
         >
           <div className="front">
             <img src={image} />
-            <p>initial consultation</p>
+            <p>Initial consultation (0-2 Years)</p>
+            <div className="price">$250.00</div>
           </div>
 
           <div className="back"></div>
@@ -64,7 +69,8 @@ function ServicesScreen() {
         >
           <div className="front">
             <img src={image2} />
-            <p>initial consultation</p>
+            <p>Initial consultation (2-5 Years)</p>
+            <div className="price">$300.00</div>
           </div>
           <div className="back"></div>
         </motion.div>
@@ -76,7 +82,8 @@ function ServicesScreen() {
         >
           <div className="front">
             <img src={image3} />
-            <p>initial consultation</p>
+            <p>Follow up sessions (1 hour)</p>
+            <div className="price">$150.00</div>
           </div>
 
           <div className="back"></div>
@@ -89,7 +96,8 @@ function ServicesScreen() {
         >
           <div className="front">
             <img src={image4} />
-            <p>initial consultation</p>
+            <p>Follow up sessions (30 minutes)</p>
+            <div className="price">$75.00</div>
           </div>
 
           <div className="back"></div>
