@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Hero from '../components/hero';
-import {bpMaxSM, bpMaxMD} from '../lib/breakpoints';
+
 import Container from '../components/container';
 import {css} from '@emotion/core';
 import theme from '../../config/theme';

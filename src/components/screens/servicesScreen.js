@@ -55,7 +55,10 @@ function ServicesScreen() {
             className="item"
           >
             <div className="front">
-              <img src={image} />
+              <img
+                src={image}
+                alt="Initial Consultation image placeholder for children 0-2 years"
+              />
               <p>Initial consultation (0-2 Years)</p>
               <div className="price">$250.00</div>
             </div>
@@ -69,7 +72,10 @@ function ServicesScreen() {
             className="item"
           >
             <div className="front">
-              <img src={image2} />
+              <img
+                src={image2}
+                alt="Initial consultation image placeholder for children 3-5 years"
+              />
               <p>Initial consultation (3-5 Years)</p>
               <div className="price">$300.00</div>
             </div>
@@ -82,7 +88,10 @@ function ServicesScreen() {
             className="item"
           >
             <div className="front">
-              <img src={image3} />
+              <img
+                src={image3}
+                alt="Image placeholder for follow up consultation for length of one hour"
+              />
               <p>Follow up sessions (1 hour)</p>
               <div className="price">$150.00</div>
             </div>
@@ -96,7 +105,10 @@ function ServicesScreen() {
             className="item"
           >
             <div className="front">
-              <img src={image4} />
+              <img
+                src={image4}
+                alt="placeholder image for follow up consultation for length of thirty minnutes"
+              />
               <p>Follow up sessions (30 minutes)</p>
               <div className="price">$75.00</div>
             </div>
