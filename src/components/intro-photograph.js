@@ -1,7 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import {useStaticQuery, graphql} from 'gatsby';
-import {css} from '@emotion/core';
 function IntroPhotograph() {
   const data = useStaticQuery(graphql`
     query {

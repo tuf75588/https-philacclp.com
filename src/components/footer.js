@@ -1,6 +1,5 @@
 import React from 'react';
 import {css} from '@emotion/core';
-import Container from './container';
 import theme from '../../config/theme';
 import {
   AiOutlineInstagram,

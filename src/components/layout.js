@@ -6,15 +6,13 @@
  */
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {graphql, useStaticQuery} from 'gatsby';
 import {Global, css} from '@emotion/core';
-import styled from '@emotion/styled';
 import {ThemeProvider} from 'emotion-theming';
 import Header from './header';
 import {MDXProvider} from '@mdx-js/react';
 import theme from '../../config/theme';
 import Navigation from './nav';
-import {bpMaxSM, bpMaxMD} from '../lib/breakpoints';
+import {bpMaxSM} from '../lib/breakpoints';
 import {fonts} from '../lib/typography';
 import reset from '../lib/reset';
 import mdxComponents from '../components/mdx';
@@ -154,33 +152,6 @@ export const globalStyles = css`
     opacity: 1;
   }
   ${reset};
-`;
-const DefaultHero = styled.section`
-  * {
-    color: ${theme.colors.white};
-  }
-  width: 100%;
-  ${({headerColor}) =>
-    headerColor
-      ? css`
-          background: #3155dc;
-          background-image: linear-gradient(-213deg, #5e31dc 0%, #3155dc 100%);
-          background-position: center right, center left;
-          background-repeat: no-repeat;
-          background-size: contain;
-        `
-      : null}
-  position: relative;
-  z-index: 0;
-  align-items: center;
-  display: flex;
-  height: 100px;
-  ${bpMaxMD} {
-    background-size: cover;
-  }
-  ${bpMaxSM} {
-    padding-top: 60px;
-  }
 `;
 
 function Layout({children, maxWidth = 720}) {

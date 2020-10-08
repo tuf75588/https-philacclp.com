@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {css} from '@emotion/core';
 import Container from '../container';
-import {FaPlusSquare} from 'react-icons/fa';
 import faqQuestions from '../../lib/questions.json';
 
 function FAQ() {

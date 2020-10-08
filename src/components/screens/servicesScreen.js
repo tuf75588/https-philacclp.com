@@ -1,12 +1,12 @@
 import React from 'react';
 import Container from '../container';
 import {css} from '@emotion/core';
-import {bpMaxSM} from '../../lib/breakpoints';
 import {motion} from 'framer-motion';
 import image from '../../images/card-image.jpg';
 import image2 from '../../images/card-image2.jpg';
 import image3 from '../../images/card-image3.jpg';
 import image4 from '../../images/card-image4.jpg';
+import {OutboundLink} from 'gatsby-plugin-google-analytics';
 function ServicesScreen() {
   return (
     <React.Fragment>
@@ -57,7 +57,7 @@ function ServicesScreen() {
             <div className="front">
               <img
                 src={image}
-                alt="Initial Consultation image placeholder for children 0-2 years"
+                alt="Initial Consultation placeholder for children 0-2 years"
               />
               <p>Initial consultation (0-2 Years)</p>
               <div className="price">$250.00</div>
@@ -74,7 +74,7 @@ function ServicesScreen() {
             <div className="front">
               <img
                 src={image2}
-                alt="Initial consultation image placeholder for children 3-5 years"
+                alt="Initial consultation  placeholder for children 3-5 years"
               />
               <p>Initial consultation (3-5 Years)</p>
               <div className="price">$300.00</div>
@@ -90,7 +90,7 @@ function ServicesScreen() {
             <div className="front">
               <img
                 src={image3}
-                alt="Image placeholder for follow up consultation for length of one hour"
+                alt=" placeholder for follow up consultation for length of one hour"
               />
               <p>Follow up sessions (1 hour)</p>
               <div className="price">$150.00</div>
@@ -107,7 +107,7 @@ function ServicesScreen() {
             <div className="front">
               <img
                 src={image4}
-                alt="placeholder image for follow up consultation for length of thirty minnutes"
+                alt="placeholder for follow up consultation for length of thirty minnutes"
               />
               <p>Follow up sessions (30 minutes)</p>
               <div className="price">$75.00</div>
@@ -140,7 +140,7 @@ function ServicesScreen() {
         `}
       >
         <div className="appointment-link">
-          <a
+          <OutboundLink
             href="https://elaine-davis.clientsecure.me"
             className="spwidget-button"
             data-spwidget-scope-id="99220159-2532-4b78-a6a5-467af79d9070"
@@ -148,7 +148,7 @@ function ServicesScreen() {
             data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b"
           >
             Request an appointment today
-          </a>
+          </OutboundLink>
         </div>
       </Container>
     </React.Fragment>
