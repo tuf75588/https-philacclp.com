@@ -5,13 +5,14 @@ module.exports = {
     author: `Andrew Davis`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-180175255-2`,
+        head: true,
       },
     },
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
