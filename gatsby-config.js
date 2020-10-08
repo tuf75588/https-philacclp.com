@@ -7,6 +7,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-180175255-2`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -42,12 +48,7 @@ module.exports = {
         icon: `./src/images/cclp-favicon.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-180175255-1`,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
