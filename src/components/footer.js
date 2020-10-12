@@ -6,6 +6,7 @@ import {
   AiOutlineTwitter,
   AiOutlineFacebook,
 } from 'react-icons/ai';
+import {OutboundLink} from 'gatsby-plugin-google-analytics';
 function Footer() {
   return (
     <footer
@@ -27,9 +28,15 @@ function Footer() {
           }
         `}
       >
-        <AiOutlineInstagram />
-        <AiOutlineTwitter />
-        <AiOutlineFacebook />
+        <OutboundLink href="https://instagram.com/philacclp">
+          <AiOutlineInstagram />
+        </OutboundLink>
+        <OutboundLink href="https://twitter.com/philacclp">
+          <AiOutlineTwitter />
+        </OutboundLink>
+        <OutboundLink href="https://facebook.com/philacclp">
+          <AiOutlineFacebook />
+        </OutboundLink>
       </div>
     </footer>
   );
