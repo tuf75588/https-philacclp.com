@@ -15,6 +15,15 @@ function Footer() {
         color: white;
         text-align: center;
         font-size: 2rem;
+        a {
+          color: inherit;
+        }
+        a:hover svg {
+          color: grey;
+        }
+        a:visited {
+          color: #fff;
+        }
       `}
     >
       <p>Connect with us</p>
